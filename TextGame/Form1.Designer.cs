@@ -38,6 +38,7 @@
             // mainTextBox
             // 
             this.mainTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.mainTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mainTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mainTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.mainTextBox.Location = new System.Drawing.Point(6, 22);
@@ -45,7 +46,6 @@
             this.mainTextBox.Multiline = true;
             this.mainTextBox.Name = "mainTextBox";
             this.mainTextBox.ReadOnly = true;
-            this.mainTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.mainTextBox.Size = new System.Drawing.Size(548, 149);
             this.mainTextBox.TabIndex = 0;
             // 
@@ -57,7 +57,7 @@
             this.mainBut.Name = "mainBut";
             this.mainBut.Size = new System.Drawing.Size(139, 49);
             this.mainBut.TabIndex = 1;
-            this.mainBut.Text = "Далее...";
+            this.mainBut.Text = "Начать";
             this.mainBut.UseVisualStyleBackColor = true;
             this.mainBut.Click += new System.EventHandler(this.mainBut_Click);
             // 

@@ -24,9 +24,10 @@ namespace TextGame
             if (dialog.ToNotEmptyList() == false) // Если список пуст, то считывает файл со сценарием
             {
                 dialog.ReadScript();
+                mainBut.Text = "Далее...";
             }
 
-            mainTextBox.AppendText(Environment.NewLine + Environment.NewLine + dialog.ShowScript()); // Вывод сценария построчно
+            mainTextBox.Text = dialog.ShowScript(); // Вывод сценария построчно
 
             if (dialog.GameMode == false) // Окончание списка со сценарием - конец игры.
             {
