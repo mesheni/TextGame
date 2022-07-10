@@ -32,7 +32,11 @@
             this.mainBut = new System.Windows.Forms.Button();
             this.mainLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.readScriptButMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTextBox
@@ -53,7 +57,7 @@
             // 
             this.mainBut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mainBut.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainBut.Location = new System.Drawing.Point(221, 242);
+            this.mainBut.Location = new System.Drawing.Point(221, 270);
             this.mainBut.Name = "mainBut";
             this.mainBut.Size = new System.Drawing.Size(139, 49);
             this.mainBut.TabIndex = 1;
@@ -67,7 +71,7 @@
             this.mainLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mainLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mainLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.mainLabel.Location = new System.Drawing.Point(12, 9);
+            this.mainLabel.Location = new System.Drawing.Point(12, 37);
             this.mainLabel.Name = "mainLabel";
             this.mainLabel.Size = new System.Drawing.Size(153, 33);
             this.mainLabel.TabIndex = 2;
@@ -78,12 +82,37 @@
             this.groupBox1.Controls.Add(this.mainTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(12, 45);
+            this.groupBox1.Location = new System.Drawing.Point(12, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(560, 177);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Имя Персонажа";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.readScriptButMenu});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // readScriptButMenu
+            // 
+            this.readScriptButMenu.Name = "readScriptButMenu";
+            this.readScriptButMenu.Size = new System.Drawing.Size(220, 22);
+            this.readScriptButMenu.Text = "Прочитать файл сценария";
+            this.readScriptButMenu.Click += new System.EventHandler(this.readScriptButMenu_Click);
             // 
             // Form1
             // 
@@ -94,12 +123,16 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mainLabel);
             this.Controls.Add(this.mainBut);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(600, 500);
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +144,8 @@
         private System.Windows.Forms.Button mainBut;
         private System.Windows.Forms.Label mainLabel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem readScriptButMenu;
     }
 }

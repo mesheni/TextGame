@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TextGame.Classes
@@ -19,18 +20,22 @@ namespace TextGame.Classes
             else return false;
         }
 
-        public void ReadScript() // Читает сценарий из файла и построчно записывает в список
+        public async void ReadScript() // Читает сценарий из файла и построчно записывает в список
         {
-            string path = @"Script\script.txt";
-
-            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+            await Task.Run(() =>
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                string path = @"Script\script.txt";
+
+                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
                 {
-                    script.Add(line);
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        script.Add(line);
+                    }
                 }
-            }
+            });
+            await Task.Run(() => MessageBox.Show("Файл прочитан!"));
         }
 
         public string ShowScript() // Возвращает строки из списка

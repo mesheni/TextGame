@@ -23,17 +23,28 @@ namespace TextGame
         {
             if (dialog.ToNotEmptyList() == false) // Если список пуст, то считывает файл со сценарием
             {
-                dialog.ReadScript();
-                mainBut.Text = "Далее...";
+                //dialog.ReadScript();
+                //mainBut.Text = "Далее...";
+                MessageBox.Show("Сначала загрузите файл со сценарием!");
             }
-
-            mainTextBox.Text = dialog.ShowScript(); // Вывод сценария построчно
-
-            if (dialog.GameMode == false) // Окончание списка со сценарием - конец игры.
+            else
             {
-                mainBut.Visible = false;
-                mainLabel.Text = "Спасибо за игру!";
+                mainTextBox.Text = dialog.ShowScript(); // Вывод сценария построчно
+
+                if (dialog.GameMode == false) // Окончание списка со сценарием - конец игры.
+                {
+                    mainBut.Visible = false;
+                    mainLabel.Text = "Спасибо за игру!";
+                }
             }
+
+            
+        }
+
+        private void readScriptButMenu_Click(object sender, EventArgs e)
+        {
+            dialog.ReadScript();
+            mainBut.Text = "Далее...";
         }
     }
 }
