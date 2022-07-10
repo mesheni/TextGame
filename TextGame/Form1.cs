@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using TextGame.Classes;
 
 namespace TextGame
 {
     public partial class Form1 : Form
     {
-        Dialog dialog = new Dialog();
+        
+
+        private Dialog dialog = new Dialog();
         public Form1()
         {
             InitializeComponent();
+
+            openFileScript.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            openFileScript.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
         }
 
         private void mainBut_Click(object sender, EventArgs e)
@@ -36,14 +40,16 @@ namespace TextGame
                     mainBut.Visible = false;
                     mainLabel.Text = "Спасибо за игру!";
                 }
-            }
-
-            
+            }  
         }
 
         private void readScriptButMenu_Click(object sender, EventArgs e)
         {
-            dialog.ReadScript();
+            if (openFileScript.ShowDialog() == DialogResult.Cancel)
+                return;
+            string pathFile = openFileScript.FileName;
+
+            dialog.ReadScript(pathFile);
             mainBut.Text = "Далее...";
         }
     }

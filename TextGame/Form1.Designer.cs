@@ -35,6 +35,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readScriptButMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileScript = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +115,10 @@
             this.readScriptButMenu.Text = "Прочитать файл сценария";
             this.readScriptButMenu.Click += new System.EventHandler(this.readScriptButMenu_Click);
             // 
+            // openFileScript
+            // 
+            this.openFileScript.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -147,5 +152,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem readScriptButMenu;
+        private System.Windows.Forms.OpenFileDialog openFileScript;
     }
 }
