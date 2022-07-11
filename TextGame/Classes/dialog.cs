@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TextGame.Interfaces;
 
 namespace TextGame.Classes
 {
-    internal class Dialog
+    internal class Dialog : IPers
     {
+        private Parse parse = new Parse();
+        List<IPers.Pers> pers = new List<IPers.Pers>();
+
+
         private List<string> script = new List<string>(); // Список в котором хранится файл сценария
         private static int count = -1; // Указатель, который пробегает по строкам списка
         private static bool gamemode = true; // Если false, то игра закончена
@@ -21,10 +24,11 @@ namespace TextGame.Classes
             else return false;
         }
 
-        public async void ReadScript(string pathFile) // Читает сценарий из файла и построчно записывает в список
+        public async void ReadScript(string pathFile) // Асинхронно читает сценарий из файла и записывает в список
         {
             script.Clear();
             count = -1;
+            gamemode = true;
 
             await Task.Run(() =>
             {
@@ -37,6 +41,12 @@ namespace TextGame.Classes
                     }
                 }
             });
+
+            await Task.Run(() => 
+            {
+                pers = parse.TextPers(script);
+            });
+
             await Task.Run(() => MessageBox.Show("Файл прочитан!"));
         }
 

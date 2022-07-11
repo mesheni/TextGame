@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using TextGame.Classes;
 
 namespace TextGame
 {
     public partial class Form1 : Form
     {
-        
-
         private Dialog dialog = new Dialog();
         public Form1()
         {
@@ -33,7 +25,7 @@ namespace TextGame
             }
             else
             {
-                mainTextBox.Text = dialog.ShowScript(); // Вывод сценария построчно
+                mainTextBox.Text = dialog.ShowScript(); // Вывод сценария на экран построчно
 
                 if (dialog.GameMode == false) // Окончание списка со сценарием - конец игры.
                 {
@@ -45,11 +37,13 @@ namespace TextGame
 
         private void readScriptButMenu_Click(object sender, EventArgs e)
         {
-            if (openFileScript.ShowDialog() == DialogResult.Cancel)
+            if (openFileScript.ShowDialog() == DialogResult.Cancel) // Открытие окна выбора файла
                 return;
-            string pathFile = openFileScript.FileName;
+            string pathFile = openFileScript.FileName; // Получаем путь к файлу
 
-            dialog.ReadScript(pathFile);
+            dialog.ReadScript(pathFile); // Отдаем на чтение
+            mainLabel.Text = "Приятной игры!";
+            mainBut.Visible = true;
             mainBut.Text = "Далее...";
         }
     }

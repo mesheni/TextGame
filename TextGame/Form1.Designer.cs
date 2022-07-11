@@ -33,7 +33,7 @@
             this.mainLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.readScriptButMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileScript = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
@@ -44,14 +44,15 @@
             // 
             this.mainTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mainTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mainTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mainTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.mainTextBox.Location = new System.Drawing.Point(6, 22);
-            this.mainTextBox.MaxLength = 4000000;
+            this.mainTextBox.Location = new System.Drawing.Point(3, 23);
+            this.mainTextBox.MaxLength = 2048;
             this.mainTextBox.Multiline = true;
             this.mainTextBox.Name = "mainTextBox";
             this.mainTextBox.ReadOnly = true;
-            this.mainTextBox.Size = new System.Drawing.Size(548, 149);
+            this.mainTextBox.Size = new System.Drawing.Size(554, 151);
             this.mainTextBox.TabIndex = 0;
             // 
             // mainBut
@@ -93,20 +94,20 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.fileMenuStrip});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(584, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // fileMenuStrip
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.readScriptButMenu});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
+            this.fileMenuStrip.Name = "fileMenuStrip";
+            this.fileMenuStrip.Size = new System.Drawing.Size(48, 20);
+            this.fileMenuStrip.Text = "Файл";
             // 
             // readScriptButMenu
             // 
@@ -150,7 +151,7 @@
         private System.Windows.Forms.Label mainLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem readScriptButMenu;
         private System.Windows.Forms.OpenFileDialog openFileScript;
     }
