@@ -6,17 +6,19 @@ namespace TextGame.Interfaces
     {
         struct Pers
         {
-            public enum ColorPers
+            public enum Color
             {
                 red,
                 green,
                 blue,
             }
+            private string name;
+            private string alias;
 
-
-            string namePers;
-            public string NamePers { get; set; }
-            public ColorPers colorPers;
+            
+            public string namePers { get; set; }
+            public Color colorPers;
+            public string aliasPers { get; set; }
         }
     }
 }

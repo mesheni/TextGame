@@ -44,7 +44,8 @@ namespace TextGame.Classes
 
             await Task.Run(() => 
             {
-                pers = parse.TextPers(script);
+                //pers = parse.TextPers(script);
+                parse.TextLabel(script);
             });
 
             await Task.Run(() => MessageBox.Show("Файл прочитан!"));
